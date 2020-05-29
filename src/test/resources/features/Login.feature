@@ -32,6 +32,19 @@ Feature: Login
       #|          | admin123  | Username cannot be empty |
       #|          |           | Username cannot be empty |
       
+      # List<Map<String, String>> maps=dataTable.asMaps();
+      
+      #| username | password  | errorMsg                 |
+      #| Admin    | Qwerty123 | Invalid credentials      |
+      
+      # Map<String, String> map=dataTable.asMap();
+      
+      
+      
+       #| Admin    | Qwerty123 | Invalid credentials      |
+       
+      # List<String> list=dataTable.asList();
+      
       
       Scenario: Negative Login Error Message Validation without header
 When I enter username and password I see error message without header
@@ -40,5 +53,7 @@ When I enter username and password I see error message without header
       | Admin123 | QWer123   | Invalid credentials      |
       |          | admin123  | Username cannot be empty |
       |          |           | Username cannot be empty |
+      
+      # List<List<String>> lists=dataTable.asLists();
       
       
