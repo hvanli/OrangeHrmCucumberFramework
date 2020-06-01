@@ -54,10 +54,10 @@ public class LoginSteps extends CommonMethods{
 	}
 	
 	@Given("I enter username {string} and password {string}")
-	public void i_enter_username_and_password(String string, String string2) {
+	public void i_enter_username_and_password(String username, String password) {
 
-		sendText(login.userName, string);
-		sendText(login.password, string2);
+		sendText(login.userName, username);
+		sendText(login.password, password);
 	}
 	
 	@When("I enter username and password I see error message")

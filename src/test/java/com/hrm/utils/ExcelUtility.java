@@ -3,6 +3,10 @@ package com.hrm.utils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -37,18 +41,34 @@ public class ExcelUtility {
 		return sheet.getRow(rowIndex).getCell(cellIndex).toString();
 	}
 	
-	public static Object[][] excelIntoArray(String filePath, String sheetName){
+	public static List<Map<String, String>> excelIntoListOfMaps(String filePath, String sheetName){
 		openExcel(filePath, sheetName);
 		
-		Object[][] data=new Object[rowCount()-1][colCount()];
+		List<Map<String, String>> data=new ArrayList<Map<String, String>>();
 		
 		for(int i=1; i<rowCount(); i++) {
-			for(int y=0; y<colCount(); y++) {
-				data[i-1][y]=getCellData(i, y);
+			Map<String, String> map=new HashMap<>();
+			for(int j=0; j<colCount(); j++) {
+				map.put(getCellData(0, j), getCellData(i, j));
 			}
-		}		
+			data.add(map);
+		}
 		return data;
 	}
 	
 	
+	public static List<ArrayList<String>> excelIntoListOfList(String filePath, String sheetName){
+		openExcel(filePath, sheetName);
+		List<ArrayList<String>> data=new ArrayList<ArrayList<String>>();
+		
+		for(int i=1; i<rowCount(); i++) {
+			ArrayList<String> list=new ArrayList<String>();
+			for(int j=0; j<colCount(); j++) {
+				list.add(getCellData(i, j));
+			}
+			data.add(list);
+		}
+		
+		return data;		
+	}
 }

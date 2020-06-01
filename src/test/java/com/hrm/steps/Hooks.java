@@ -18,9 +18,11 @@ public class Hooks extends CommonMethods{
 	public void end(Scenario scenario) {
 		System.out.println("Ending scenario -->"+scenario.getName());
 		if(scenario.isFailed()) {
+			System.out.println("Test FAIL -->"+ scenario.getName());
 			byte[] picture=takeScreenShot("/failed/"+scenario.getName());
 			scenario.embed(picture, "image/png");
 		}else {
+			System.out.println("Test PASS -->"+ scenario.getName());
 			byte[] picture=takeScreenShot("/passed/"+scenario.getName());
 			scenario.embed(picture, "image/png");
 		}

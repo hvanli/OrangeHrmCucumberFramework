@@ -28,6 +28,12 @@ public class PersonalDetailsPageWebElements extends BaseClass{
 	@FindBy(id="user_name")
 	public WebElement nameOnEmpPicture;
 	
+	@FindBy(id="menu_pim_viewPimModule")
+	public WebElement PimBtn;
+	
+	@FindBy(id="menu_pim_addEmployee")
+	public WebElement addEmpBtn;
+	
 
 	public PersonalDetailsPageWebElements() {
 		PageFactory.initElements(driver, this);

@@ -11,7 +11,7 @@ public class Constants {
 
 	public static final int PAGE_LOAD_TIMEOUT=40;
 	public static final int IMPLICIT_WAIT_TIME=20;
-	public static final int EXPLICIT_WAIT_TIME=20;
+	public static final int EXPLICIT_WAIT_TIME=30;
 	
 	public static final String SCREENSHOTS_FILEPATH=System.getProperty("user.dir")+"/target/screenshots/";
 	

@@ -6,15 +6,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "classpath:features"
+		features = "classpath:features/AddEmployee.feature"
 		, glue = "com/hrm/steps"
 		, dryRun = true
+//		,plugin = {"pretty", "html:target/html/cucumber-default"}
 //		, tags = "smoke"
 		, monochrome = true
 		)
-
-
-
 public class Runner {
 
 }

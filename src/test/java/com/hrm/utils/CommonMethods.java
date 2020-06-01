@@ -28,7 +28,7 @@ public class CommonMethods extends PageInitializer {
 	 * @param text
 	 */
 	public static void sendText(WebElement element, String text) {
-		waitForVisibility(element);
+//		waitForVisibility(element);
 		element.clear();
 		element.sendKeys(text);
 	}
