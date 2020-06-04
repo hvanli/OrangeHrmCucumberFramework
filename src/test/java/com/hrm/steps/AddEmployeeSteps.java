@@ -90,7 +90,9 @@ public class AddEmployeeSteps extends CommonMethods{
 			
 			Actions action=new Actions(driver);
 			action.moveToElement(pDetails.PimBtn).perform();
-			action.moveToElement(pDetails.addEmpBtn).click().perform();			
+			action.moveToElement(pDetails.addEmpBtn).click().perform();
+			
+			Thread.sleep(4000);
 		}
 	}
 }

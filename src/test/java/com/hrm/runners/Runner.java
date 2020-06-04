@@ -6,10 +6,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "classpath:features/AddEmployee.feature"
+		features = "src/test/resources/features"
 		, glue = "com/hrm/steps"
-		, dryRun = true
-//		,plugin = {"pretty", "html:target/html/cucumber-default"}
+		, dryRun = false
+		,plugin = {"pretty", "html:target/html/cucumber-default", "json:target/cucumber.json", "rerun:target/failed.txt"}
 //		, tags = "smoke"
 		, monochrome = true
 		)

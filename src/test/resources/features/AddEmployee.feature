@@ -1,4 +1,4 @@
-@addAmployee
+@addAmployee @smoke
 Feature: Add Employee
 
   @smoke
