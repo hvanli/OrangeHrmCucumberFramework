@@ -8,19 +8,19 @@ Feature: Login
     When I click login button
     Then I succussfully login Orange HRM
 
-  @regression
-  Scenario Outline: Invalid login error message validation
-    Given I enter username "<username>" and password "<password>"
-    When I click login button
-    Then I see "<errorMsg>"
-
-    Examples: 
-      | username | password  | errorMsg                 |
-      | Admin    | Qwerty123 | Invalid credentials      |
-      | Admin    |           | Password cannot be empty |
-      | Admin123 | QWer123   | Invalid credentials      |
-      |          | admin123  | Username cannot be empty |
-      |          |           | Username cannot be empty |
+  #@regression
+  #Scenario Outline: Invalid login error message validation
+    #Given I enter username "<username>" and password "<password>"
+    #When I click login button
+    #Then I see "<errorMsg>"
+#
+    #Examples: 
+      #| username | password  | errorMsg                 |
+      #| Admin    | Qwerty123 | Invalid credentials      |
+      #| Admin    |           | Password cannot be empty |
+      #| Admin123 | QWer123   | Invalid credentials      |
+      #|          | admin123  | Username cannot be empty |
+      #|          |           | Username cannot be empty |
       
       
 #Scenario: Negative Login Error Message Validation

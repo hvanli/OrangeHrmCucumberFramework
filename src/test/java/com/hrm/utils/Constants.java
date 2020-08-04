@@ -15,7 +15,9 @@ public class Constants {
 	
 	public static final String SCREENSHOTS_FILEPATH=System.getProperty("user.dir")+"/target/screenshots/";
 	
-	public static final String CREDENTIALS_FILEPATH=System.getProperty("user.dir")+"/src/test/resources/configs/Credential.properties";
+	public static final String CREDENTIALS_FILEPATH=System.getProperty("user.dir")+
+			"/src/test/resources/configs/Credential.properties";
+	
 			
 	public static final String TEST_DATA_FILEPATH=System.getProperty("user.dir")+"/src/test/resources/testdata/TestData.xlsx";
 

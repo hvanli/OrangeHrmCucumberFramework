@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.hrm.utils.ConfigsReader;
 import com.hrm.utils.Constants;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class BaseClass extends Constants{
 
@@ -17,16 +19,18 @@ public class BaseClass extends Constants{
 	
 	public static void setUp() {
 		
-		Properties configs=ConfigsReader.readProperties();
-		String browser=configs.getProperty("browser").toLowerCase();
+//		Properties configs=ConfigsReader.readProperties();
+		String browser=ConfigsReader.getProperty("browser").toLowerCase();
 		
 		switch (browser) {
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FILEPATH);
+			WebDriverManager.chromedriver().setup();
+//			System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_FILEPATH);
 			driver=new ChromeDriver();
 			break;
 		case "firefox":
-			System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FILEPATH);
+//			System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_FILEPATH);
+			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 			break;
 

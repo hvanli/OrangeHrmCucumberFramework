@@ -37,6 +37,7 @@ public class MavenSureFirePlugin {
 			- delete optinal lines
 			
 		3. Include cucumber reporting inside our Runner.java file
+		3. Run our test from pom.xml file or from command line
 		
 	 *  */
 }

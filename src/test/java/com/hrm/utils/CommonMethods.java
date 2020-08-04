@@ -2,6 +2,8 @@ package com.hrm.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -247,6 +249,22 @@ public class CommonMethods extends PageInitializer {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
 		String formattedDate = sdf.format(date.getTime());
 		return formattedDate;
+	}
+	
+	
+	public static String jsonFile;
+	/**
+	 * This method receives the filepath of the jSon file and returns it in String format
+	 * @param filePath
+	 * @return
+	 */
+	public static String readJson(String filePath) {
+		try {
+			jsonFile=new String(Files.readAllBytes(Paths.get(filePath)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return jsonFile;
 	}
 
 }
